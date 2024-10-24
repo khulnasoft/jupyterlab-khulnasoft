@@ -1,0 +1,14 @@
+{
+  "title": "Khulnasoft",
+  "description": "KhulnaSoft settings",
+  "type": "object",
+  "properties": {
+    "apiKey": {
+      "type": "string",
+      "title": "The Khulnasoft API key",
+      "description": "The API key to use for Khulnasoft",
+      "default": ""
+    }
+  },
+  "additionalProperties": false
+}
