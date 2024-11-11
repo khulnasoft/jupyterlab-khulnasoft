@@ -35,7 +35,7 @@ import IPaths = JupyterFrontEnd.IPaths;
  * The plugin registration information.
  */
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: '@khulnasoftco/jupyterlab-khulnasoft:plugin',
+  id: '@khulnasoft/jupyterlab-khulnasoft:plugin',
   requires: [
     IEditorTracker,
     INotebookTracker,
@@ -109,7 +109,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     });
 
     status_bar.registerStatusItem(
-      '@khulnasoftco/jupyterlab-khulnasoft:language-server-status',
+      '@khulnasoft/jupyterlab-khulnasoft:language-server-status',
       {
         item: status_bar_item,
         align: 'left',

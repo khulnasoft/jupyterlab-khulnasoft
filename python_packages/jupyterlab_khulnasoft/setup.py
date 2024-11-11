@@ -6,7 +6,7 @@ import setuptools
 
 LABEXTENSIONS_DIR = Path("jupyterlab_khulnasoft/labextensions")
 LABEXTENSIONS_INSTALL_DIR = Path("share") / "jupyter" / "labextensions"
-LAB_PACKAGE_PATH = LABEXTENSIONS_DIR / "@khulnasoftco" / "jupyterlab-khulnasoft" / "package.json"
+LAB_PACKAGE_PATH = LABEXTENSIONS_DIR / "@khulnasoft" / "jupyterlab-khulnasoft" / "package.json"
 
 
 def get_data_files():
@@ -20,7 +20,7 @@ def get_data_files():
 
     extension_files.append(
         (
-            str(LABEXTENSIONS_INSTALL_DIR / "@khulnasoftco" / "jupyterlab-khulnasoft"),
+            str(LABEXTENSIONS_INSTALL_DIR / "@khulnasoft" / "jupyterlab-khulnasoft"),
             ["jupyterlab_khulnasoft/install.json"],
         )
     )

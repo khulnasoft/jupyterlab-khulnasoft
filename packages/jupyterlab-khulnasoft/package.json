@@ -1,5 +1,5 @@
 {
-  "name": "@khulnasoftco/jupyterlab-khulnasoft",
+  "name": "@khulnasoft/jupyterlab-khulnasoft",
   "version": "2.0.2",
   "description": "Khulnasoft integration for JupyterLab",
   "keywords": [
@@ -13,9 +13,9 @@
     "linting",
     "khulnasoft"
   ],
-  "homepage": "https://github.com/khulnasoftco/jupyterlab-khulnasoft",
+  "homepage": "https://github.com/khulnasoft/jupyterlab-khulnasoft",
   "bugs": {
-    "url": "https://github.com/khulnasoftco/jupyterlab-khulnasoft/issues"
+    "url": "https://github.com/khulnasoft/jupyterlab-khulnasoft/issues"
   },
   "license": "SEE LICENSE IN ../../LICENSE",
   "contributors": [
@@ -29,7 +29,7 @@
   "types": "lib/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/khulnasoftco/jupyterlab-khulnasoft.git"
+    "url": "https://github.com/khulnasoft/jupyterlab-khulnasoft.git"
   },
   "scripts": {
     "build": "jlpm build:schema && jlpm run build:lib && jlpm run build:labextension",
@@ -131,6 +131,6 @@
       }
     },
     "schemaDir": "schema",
-    "outputDir": "../../python_packages/jupyterlab_khulnasoft/jupyterlab_khulnasoft/labextensions/@khulnasoftco/jupyterlab-khulnasoft"
+    "outputDir": "../../python_packages/jupyterlab_khulnasoft/jupyterlab_khulnasoft/labextensions/@khulnasoft/jupyterlab-khulnasoft"
   }
 }

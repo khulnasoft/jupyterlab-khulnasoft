@@ -106,7 +106,7 @@ export class KhulnasoftAccessible extends ListModel {
               label="Fix This"
               onClick={() => {
                 window.open(
-                  'https://github.com/khulnasoftco/jupyterlab-khulnasoft#installing-the-khulnasoft-extension-for-jupyterlab',
+                  'https://github.com/khulnasoft/jupyterlab-khulnasoft#installing-the-khulnasoft-extension-for-jupyterlab',
                   '_blank'
                 );
                 void INotification.dismiss(id);
@@ -240,7 +240,7 @@ export class KhulnasoftAccessible extends ListModel {
                   pip install --upgrade jupyter-khulnasoft
                 </li>
                 <li className="--jp-khulnasoft-innernotif-li">
-                  jupyter labextension update @khulnasoftco/jupyterlab-khulnasoft
+                  jupyter labextension update @khulnasoft/jupyterlab-khulnasoft
                 </li>
               </ul>
               <ButtonBar
@@ -283,7 +283,7 @@ export class KhulnasoftAccessible extends ListModel {
     if (pluginMap['@krassowski/jupyterlab-lsp']) {
       return Health.IncompatibleJLabLSPPlugin;
     }
-    if (ListModel.entryHasUpdate(pluginMap['@khulnasoftco/jupyterlab-khulnasoft'])) {
+    if (ListModel.entryHasUpdate(pluginMap['@khulnasoft/jupyterlab-khulnasoft'])) {
       return Health.JLabKhulnasoftHasUpdate;
     }
 

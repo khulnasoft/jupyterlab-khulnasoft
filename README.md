@@ -48,7 +48,7 @@ If you're using **JupyterLab 2.2.x**, run:
 
 ```sh
 pip install "jupyter-khulnasoft<2.0.0"
-jupyter labextension install "@khulnasoftco/jupyterlab-khulnasoft"
+jupyter labextension install "@khulnasoft/jupyterlab-khulnasoft"
 ```
 > ⚠️ JupyterLab 2.2.x requires [NodeJS](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html#installing-nodejs) to be installed
 
