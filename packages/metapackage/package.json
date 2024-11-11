@@ -1,10 +1,10 @@
 {
-  "name": "@khulnasoftco/jupyterlab-khulnasoft-metapackage",
+  "name": "@khulnasoft/jupyterlab-khulnasoft-metapackage",
   "version": "2.0.2",
   "description": "Khulnasoft Extension - Meta Package.  All of the packages used by the JupyterLab Khulnasoft Extension",
-  "homepage": "https://github.com/khulnasoftco/jupyterlab-khulnasoft",
+  "homepage": "https://github.com/khulnasoft/jupyterlab-khulnasoft",
   "bugs": {
-    "url": "https://github.com/khulnasoftco/jupyterlab-khulnasoft/issues"
+    "url": "https://github.com/khulnasoft/jupyterlab-khulnasoft/issues"
   },
   "license": "SEE LICENSE IN ../../LICENSE",
   "contributors": ["Michał Krassowski", "Manhattan Engineering, Inc"],
@@ -26,7 +26,7 @@
     "watch": "tsc -b --watch"
   },
   "dependencies": {
-    "@khulnasoftco/jupyterlab-khulnasoft": "file:../jupyterlab-khulnasoft",
+    "@khulnasoft/jupyterlab-khulnasoft": "file:../jupyterlab-khulnasoft",
     "lsp-ws-connection": "file:../lsp-ws-connection"
   },
   "devDependencies": {
