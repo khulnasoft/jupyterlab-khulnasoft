@@ -61,7 +61,8 @@ export class KhulnasoftStatusModel extends VDomModel {
     }
 
     // Check if Khulnasoft engine is installed
-    const installed = await this.languageServerManager.fetchKhulnasoftInstalled();
+    const installed =
+      await this.languageServerManager.fetchKhulnasoftInstalled();
     if (!installed) {
       console.warn('Khulnasoft engine not installed');
       this.setState({ khulnasoftUninstalled: true });
@@ -74,7 +75,9 @@ export class KhulnasoftStatusModel extends VDomModel {
 
     // Get status from Khulnasoft Engine
     if (connection && documentInfo) {
-      const khulnasoftStatus = await connection.fetchKhulnasoftStatus(documentInfo);
+      const khulnasoftStatus = await connection.fetchKhulnasoftStatus(
+        documentInfo
+      );
       this.setState({ khulnasoftStatus });
     }
   }

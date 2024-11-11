@@ -257,12 +257,10 @@ export class Diagnostics extends CodeMirrorLSPFeature {
           let document: VirtualDocument;
           try {
             // assuming that we got a response for this document
-            let start_in_root = this.transform_virtual_position_to_root_position(
-              start
-            );
-            document = this.virtual_editor.document_at_root_position(
-              start_in_root
-            );
+            let start_in_root =
+              this.transform_virtual_position_to_root_position(start);
+            document =
+              this.virtual_editor.document_at_root_position(start_in_root);
           } catch (e) {
             console.log(e, diagnostics);
             return;

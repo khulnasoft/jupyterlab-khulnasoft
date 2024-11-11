@@ -58,13 +58,11 @@ describe('VirtualDocument', () => {
 
   describe('#extract_foreign_code', () => {
     it('joins non-standalone fragments together', () => {
-      let {
-        cell_code_kept,
-        foreign_document_map
-      } = document.extract_foreign_code(R_LINE_MAGICS, null, {
-        line: 0,
-        column: 0
-      });
+      let { cell_code_kept, foreign_document_map } =
+        document.extract_foreign_code(R_LINE_MAGICS, null, {
+          line: 0,
+          column: 0
+        });
 
       // note R cell lines are kept in code (keep_in_host=true)
       expect(cell_code_kept).to.equal(R_LINE_MAGICS);
@@ -164,9 +162,8 @@ describe('VirtualDocument', () => {
       // expect(source_position.ch).to.equal(4);
       // because it checks R source position, rather than checking root source positions.
 
-      let editor_position = foreign_document.transform_virtual_to_editor(
-        virtual_r_1_1
-      );
+      let editor_position =
+        foreign_document.transform_virtual_to_editor(virtual_r_1_1);
       expect(editor_position.line).to.equal(1);
       expect(editor_position.ch).to.equal(4);
 

@@ -43,9 +43,8 @@ export class Selection extends CodeMirrorLSPFeature {
     if (document !== this.virtual_document) {
       return;
     }
-    let virtual_position = this.virtual_editor.root_position_to_virtual_position(
-      root_position
-    );
+    let virtual_position =
+      this.virtual_editor.root_position_to_virtual_position(root_position);
     console.log('[Khulnasoft] Virtual Position', virtual_position);
     this.connection.sendSelection(
       virtual_position,

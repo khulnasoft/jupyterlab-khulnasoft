@@ -66,7 +66,9 @@ const plugin: JupyterFrontEndPlugin<void> = {
     registerKhulnasoftCommands(app, palette);
 
     const language_server_manager = new LanguageServerManager({});
-    const khulnasoft_status_model = new KhulnasoftStatusModel(language_server_manager);
+    const khulnasoft_status_model = new KhulnasoftStatusModel(
+      language_server_manager
+    );
     const connection_manager = new DocumentConnectionManager({
       language_server_manager,
       khulnasoft_status_model

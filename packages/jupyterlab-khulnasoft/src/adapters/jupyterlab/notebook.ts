@@ -204,6 +204,7 @@ export class NotebookAdapter extends JupyterLabWidgetAdapter {
     this.current_completion_connector.abort();
     this.set_completion_connector(cell);
     this.current_completion_handler.editor = cell.editor;
-    this.current_completion_handler.connector = this.current_completion_connector;
+    this.current_completion_handler.connector =
+      this.current_completion_connector;
   }
 }

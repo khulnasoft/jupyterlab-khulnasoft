@@ -38,14 +38,14 @@ export class VirtualFileEditor extends VirtualEditor {
   }
 
   transform_virtual_to_editor(position: IVirtualPosition): IEditorPosition {
-    return (position as unknown) as IEditorPosition;
+    return position as unknown as IEditorPosition;
   }
 
   public transform_editor_to_root(
     cm_editor: CodeMirror.Editor,
     position: IEditorPosition
   ): IRootPosition {
-    return (position as unknown) as IRootPosition;
+    return position as unknown as IRootPosition;
   }
 
   public get_editor_index(position: CodeMirror.Position): number {

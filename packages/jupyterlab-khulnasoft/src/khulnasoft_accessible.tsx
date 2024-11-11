@@ -98,8 +98,8 @@ export class KhulnasoftAccessible extends ListModel {
               jupyter-khulnasoft server extension could not be reached.
             </p>
             <p>
-              To fix this, please ensure the jupyter-khulnasoft server extension is
-              installed and active (`jupyter serverextension list`), then
+              To fix this, please ensure the jupyter-khulnasoft server extension
+              is installed and active (`jupyter serverextension list`), then
               restart the JupyterLab process.
             </p>
             <ButtonBar
@@ -123,9 +123,9 @@ export class KhulnasoftAccessible extends ListModel {
         id = await INotification.notify(
           <InnerNotif title="Khulnasoft is missing some dependencies">
             <p className="--jp-khulnasoft-innernotif-main-msg">
-              The jupyterlab-khulnasoft extension will not work because you using an
-              unsupported version of JupyterLab and you are missing the desktop
-              application.
+              The jupyterlab-khulnasoft extension will not work because you
+              using an unsupported version of JupyterLab and you are missing the
+              desktop application.
             </p>
             <p>
               To fix this, please upgrade JupyterLab to version 2.2 or later and
@@ -152,8 +152,8 @@ export class KhulnasoftAccessible extends ListModel {
         id = await INotification.notify(
           <InnerNotif title="Khulnasoft is missing some dependencies">
             <p className="--jp-khulnasoft-innernotif-main-msg">
-              The jupyterlab-khulnasoft extension will not work because you are using
-              an unsupported version of JupyterLab.
+              The jupyterlab-khulnasoft extension will not work because you are
+              using an unsupported version of JupyterLab.
             </p>
             <p>
               To fix this, please upgrade JupyterLab to version 2.2 or later.
@@ -183,7 +183,8 @@ export class KhulnasoftAccessible extends ListModel {
               missing the Khulnasoft Engine desktop application.
             </p>
             <p>
-              To fix this, please install the Khulnasoft Engine desktop application.
+              To fix this, please install the Khulnasoft Engine desktop
+              application.
             </p>
             <ButtonBar
               label="Fix This"
@@ -206,8 +207,8 @@ export class KhulnasoftAccessible extends ListModel {
         id = await INotification.notify(
           <InnerNotif title="Khulnasoft may not work properly in your environment">
             <p className="--jp-khulnasoft-innernotif-main-msg">
-              The jupyterlab-khulnasoft extension is incompatible with your JupyterLab
-              configuration.
+              The jupyterlab-khulnasoft extension is incompatible with your
+              JupyterLab configuration.
             </p>
             <p>It will not work with the jupyterlab-lsp extension.</p>
             <ButtonBar
@@ -232,8 +233,8 @@ export class KhulnasoftAccessible extends ListModel {
           <>
             <InnerNotif title="There is a new version of Khulnasoft available">
               <p className="--jp-khulnasoft-innernotif-main-msg">
-                Please update your jupyterlab-khulnasoft extension with the terminal
-                commands:
+                Please update your jupyterlab-khulnasoft extension with the
+                terminal commands:
               </p>
               <ul className="--jp-khulnasoft-innernotif-list --jp-khulnasoft-innernotif-no-bullets">
                 <li className="--jp-khulnasoft-innernotif-li">
@@ -269,7 +270,8 @@ export class KhulnasoftAccessible extends ListModel {
     } catch {
       return Health.ServerExtensionUnreachable;
     }
-    const installed = await this.languageServerManager.fetchKhulnasoftInstalled();
+    const installed =
+      await this.languageServerManager.fetchKhulnasoftInstalled();
     const version = PageConfig.getOption('appVersion');
     if (!installed && Semver.lt(version, _MinJlabVersion)) {
       return Health.RequirementsNotMet;
@@ -283,7 +285,9 @@ export class KhulnasoftAccessible extends ListModel {
     if (pluginMap['@krassowski/jupyterlab-lsp']) {
       return Health.IncompatibleJLabLSPPlugin;
     }
-    if (ListModel.entryHasUpdate(pluginMap['@khulnasoft/jupyterlab-khulnasoft'])) {
+    if (
+      ListModel.entryHasUpdate(pluginMap['@khulnasoft/jupyterlab-khulnasoft'])
+    ) {
       return Health.JLabKhulnasoftHasUpdate;
     }
 
@@ -334,7 +338,10 @@ function ButtonBar(props: {
   return (
     <div className="--jp-khulnasoft-buttonbar">
       <div className="--jp-khulnasoft-buttonbar-spacer" />
-      <button className="--jp-khulnasoft-innernotif-button" onClick={props.onClick}>
+      <button
+        className="--jp-khulnasoft-innernotif-button"
+        onClick={props.onClick}
+      >
         {props.label}
       </button>
     </div>

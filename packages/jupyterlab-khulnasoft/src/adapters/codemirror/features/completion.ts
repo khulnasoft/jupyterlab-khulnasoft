@@ -14,7 +14,8 @@ export class Completion extends CodeMirrorLSPFeature {
       this._completionCharacters == null ||
       !this._completionCharacters.length
     ) {
-      this._completionCharacters = this.connection.getLanguageCompletionCharacters();
+      this._completionCharacters =
+        this.connection.getLanguageCompletionCharacters();
     }
     return this._completionCharacters;
   }

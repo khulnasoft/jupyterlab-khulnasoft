@@ -200,12 +200,10 @@ export abstract class CodeMirrorLSPFeature implements ILSPFeature {
     let end = PositionConverter.lsp_to_cm(range.end) as IVirtualPosition;
 
     if (cm_editor == null) {
-      let start_in_root = this.transform_virtual_position_to_root_position(
-        start
-      );
-      cm_editor = this.virtual_editor.get_editor_at_root_position(
-        start_in_root
-      );
+      let start_in_root =
+        this.transform_virtual_position_to_root_position(start);
+      cm_editor =
+        this.virtual_editor.get_editor_at_root_position(start_in_root);
     }
 
     return {
@@ -229,9 +227,8 @@ export abstract class CodeMirrorLSPFeature implements ILSPFeature {
     start: IVirtualPosition
   ): IRootPosition {
     let cm_editor = this.virtual_document.virtual_lines.get(start.line).editor;
-    let editor_position = this.virtual_document.transform_virtual_to_editor(
-      start
-    );
+    let editor_position =
+      this.virtual_document.transform_virtual_to_editor(start);
     return this.virtual_editor.transform_editor_to_root(
       cm_editor,
       editor_position

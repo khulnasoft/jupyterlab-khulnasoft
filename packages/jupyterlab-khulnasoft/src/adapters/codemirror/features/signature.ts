@@ -90,9 +90,8 @@ export class Signature extends CodeMirrorLSPFeature {
 
     let root_position = this.signature_character;
     let cm_editor = this.get_cm_editor(root_position);
-    let editor_position = this.virtual_editor.root_position_to_editor(
-      root_position
-    );
+    let editor_position =
+      this.virtual_editor.root_position_to_editor(root_position);
     let language = this.get_language_at(editor_position, cm_editor);
     let markup = this.get_markup_for_signature_help(response, language);
 
@@ -113,7 +112,8 @@ export class Signature extends CodeMirrorLSPFeature {
 
   get signatureCharacters() {
     if (!this._signatureCharacters?.length) {
-      this._signatureCharacters = this.connection.getLanguageSignatureCharacters();
+      this._signatureCharacters =
+        this.connection.getLanguageSignatureCharacters();
     }
     return this._signatureCharacters;
   }
@@ -127,9 +127,8 @@ export class Signature extends CodeMirrorLSPFeature {
 
     this.signature_character = root_position;
 
-    let virtual_position = this.virtual_editor.root_position_to_virtual_position(
-      root_position
-    );
+    let virtual_position =
+      this.virtual_editor.root_position_to_virtual_position(root_position);
 
     this.virtual_editor.console.log(
       'Signature will be requested for',

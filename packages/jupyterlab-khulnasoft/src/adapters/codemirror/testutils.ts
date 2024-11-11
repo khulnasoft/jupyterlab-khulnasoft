@@ -45,7 +45,8 @@ export class MockLanguageServerManager extends LanguageServerManager {
 }
 
 export abstract class FeatureTestEnvironment
-  implements IFeatureTestEnvironment {
+  implements IFeatureTestEnvironment
+{
   host: HTMLElement;
   virtual_editor: VirtualEditor;
   private connections: Map<CodeMirrorLSPFeature, LSPConnection>;

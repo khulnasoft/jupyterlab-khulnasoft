@@ -98,7 +98,8 @@ const mime_type_language_map: JSONObject = {
  * has to handle that, keeping multiple connections and multiple virtual documents.
  */
 export abstract class JupyterLabWidgetAdapter
-  implements IJupyterLabComponentsManager {
+  implements IJupyterLabComponentsManager
+{
   state: IStateDB;
   protected adapters: Map<VirtualDocument.id_path, CodeMirrorAdapter>;
   private readonly invoke_command: string;
@@ -572,9 +573,8 @@ export abstract class JupyterLabWidgetAdapter
 
   get_context(root_position: IRootPosition): ICommandContext {
     let document = this.virtual_editor.document_at_root_position(root_position);
-    let virtual_position = this.virtual_editor.root_position_to_virtual_position(
-      root_position
-    );
+    let virtual_position =
+      this.virtual_editor.root_position_to_virtual_position(root_position);
     return {
       document,
       connection: this.connection_manager.connections.get(document.id_path),
@@ -639,7 +639,8 @@ export abstract class JupyterLabWidgetAdapter
         state
       );
       try {
-        const jlCompleter = this.completion_handler.completer as KhulnasoftCompleter;
+        const jlCompleter = this.completion_handler
+          .completer as KhulnasoftCompleter;
         jlCompleter.onUpdateRequest = khulnasoftCompleter.onUpdateRequest;
       } catch (err) {
         console.error(err);

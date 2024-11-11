@@ -126,9 +126,8 @@ export class Hover extends CodeMirrorLSPFeature {
     const markup = Hover.get_markup_for_hover(response);
     let root_position = this.hover_character;
     let cm_editor = this.get_cm_editor(root_position);
-    let editor_position = this.virtual_editor.root_position_to_editor(
-      root_position
-    );
+    let editor_position =
+      this.virtual_editor.root_position_to_editor(root_position);
 
     this.jupyterlab_components.create_tooltip(
       markup,
@@ -165,9 +164,8 @@ export class Hover extends CodeMirrorLSPFeature {
     let token = this.virtual_editor.getTokenAt(root_position);
 
     let document = this.virtual_editor.document_at_root_position(root_position);
-    let virtual_position = this.virtual_editor.root_position_to_virtual_position(
-      root_position
-    );
+    let virtual_position =
+      this.virtual_editor.root_position_to_virtual_position(root_position);
 
     if (
       this.is_token_empty(token) ||
@@ -212,15 +210,13 @@ export class Hover extends CodeMirrorLSPFeature {
     // no need to to this again here.
 
     if (range) {
-      let cm_editor = this.virtual_editor.get_editor_at_root_position(
-        character
-      );
+      let cm_editor =
+        this.virtual_editor.get_editor_at_root_position(character);
       return this.range_to_editor_range(range, cm_editor);
     } else {
       // construct range manually using the token information
-      let cm_editor = this.virtual_document.root.get_editor_at_source_line(
-        character
-      );
+      let cm_editor =
+        this.virtual_document.root.get_editor_at_source_line(character);
       let token = this.virtual_editor.getTokenAt(character);
 
       let start_in_root = {

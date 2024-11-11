@@ -100,9 +100,8 @@ export class Highlights extends CodeMirrorLSPFeature {
       return;
     }
     try {
-      let virtual_position = this.virtual_editor.root_position_to_virtual_position(
-        root_position
-      );
+      let virtual_position =
+        this.virtual_editor.root_position_to_virtual_position(root_position);
       const highlights = await this.connection.getDocumentHighlights(
         virtual_position,
         this.virtual_document.document_info,

@@ -410,8 +410,8 @@ export class KhulnasoftModel {
     }
     if (
       JSONExt.deepEqual(
-        (newValue as unknown) as ReadonlyPartialJSONArray,
-        (this._completionItems as unknown) as ReadonlyPartialJSONArray
+        newValue as unknown as ReadonlyPartialJSONArray,
+        this._completionItems as unknown as ReadonlyPartialJSONArray
       )
     ) {
       return;

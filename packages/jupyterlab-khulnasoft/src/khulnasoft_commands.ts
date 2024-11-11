@@ -40,7 +40,9 @@ const paletteCommands: ReadonlyArray<IKhulnasoftCommand> = [
     options: {
       label: 'Khulnasoft: Help',
       execute: () => {
-        window.open('https://help.khulnasoft.com/category/138-jupyterlab-plugin');
+        window.open(
+          'https://help.khulnasoft.com/category/138-jupyterlab-plugin'
+        );
       }
     }
   },
