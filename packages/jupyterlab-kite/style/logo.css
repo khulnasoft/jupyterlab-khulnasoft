@@ -1,0 +1,16 @@
+body[data-jp-theme-light='true'] [data-icon='jupyterlab-khulnasoft:completion-icon'] {
+  fill: #11182f;
+  fill-opacity: 60%;
+  transform: scale(0.6);
+}
+
+body[data-jp-theme-light='false']
+  [data-icon='jupyterlab-khulnasoft:completion-icon'] {
+  fill: #d3d3d3;
+  fill-opacity: 60%;
+  transform: scale(0.6);
+}
+
+[data-icon='jupyterlab-khulnasoft:status-icon'] {
+  fill: var(--jp-ui-font-color1);
+}

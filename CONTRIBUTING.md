@@ -1,37 +1,51 @@
-# Contributing
+# Development
 
-## Development install
+Development requires, at a minimum:
+- `python >=3.6,<4.0`
+- `jupyterlab >=3.0.0,<4.0.0a0`
 
-Note: You will need NodeJS to build the extension package.
+It is recommended to use a virtual environment (e.g. `virtualenv` or `conda env`)
+for development.
 
-The `jlpm` command is JupyterLab's pinned version of
-[yarn](https://yarnpkg.com/) that is installed with JupyterLab. You may use
-`yarn` or `npm` in lieu of `jlpm` below.
+Install `jupyter-khulnasoft` from source in your virtual environment:
 
 ```bash
-# Clone the repo to your local environment
-# Change directory to the jupyterlab_khulnasoft directory
-# Install package in development mode
-pip install -e "."
-# Link your development version of the extension with JupyterLab
-jupyter labextension develop . --overwrite
-# Rebuild extension Typescript source after making changes
-jlpm build
+python -m pip install -e python_packages/jupter_khulnasoft --ignore-installed --no-deps -vv
 ```
 
-You can watch the source directory and run JupyterLab at the same time in different terminals to watch for changes in the extension's source and automatically rebuild the extension.
+Enable the server extension:
 
 ```bash
-# Watch the source directory in one terminal, automatically rebuilding when needed
-jlpm watch
-# Run JupyterLab in another terminal
-jupyter lab
+jupyter server extension enable --sys-prefix --py jupyter_khulnasoft
 ```
 
-With the watch command running, every saved change will immediately be built locally and available in your running JupyterLab. Refresh JupyterLab to load the change in your browser (you may need to wait several seconds for the extension to be rebuilt).
-
-By default, the `jlpm build` command generates the source maps for this extension to make it easier to debug using the browser dev tools. To also generate source maps for the JupyterLab core extensions, you can run the following command:
+Install `npm` dependencies, build TypeScript packages, and link
+to JupyterLab for development:
 
 ```bash
-jupyter lab build --minimize=False
+jlpm bootstrap
+# if you installed `jupyterlab_khulnasoft` before uninstall it before running the next line
+jupyter labextension develop python_packages/jupyterlab_khulnasoft/ --overwrite
+```
+
+> Note: on Windows you may need to enable Developer Mode first, as discussed in [jupyterlab#9564](https://github.com/jupyterlab/jupyterlab/issues/9564)
+
+### Frontend Development
+
+To watch the files and build continuously:
+
+```bash
+jlpm watch   # leave this running...
+jupyter lab --watch  # ...in another terminal
+```
+
+Now after each change to TypesScript files wait until both watchers finish compilation,
+and then refresh the JupyterLab in your browser.
+
+> Note: the backend schema is not included in `watch`, and is only refreshed by `build`
+
+To check and fix code style:
+
+```bash
+jlpm lint
 ```
