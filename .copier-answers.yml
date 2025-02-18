@@ -2,13 +2,13 @@
 _commit: v4.3.1
 _src_path: https://github.com/jupyterlab/extension-template
 author_email: ''
-author_name: Jeremy Tuloup
+author_name: Md Sulaiman
 has_binder: false
 has_settings: true
 kind: frontend
-labextension_name: jupyterlab-codeium
-project_short_description: A JupyterLab extension to get AI code completion with codeium
-python_name: jupyterlab_codeium
-repository: https://github.com/jtpio/jupyterlab-codeium
+labextension_name: jupyterlab-khulnasoft
+project_short_description: A JupyterLab extension to get AI code completion with khulnasoft
+python_name: jupyterlab_khulnasoft
+repository: https://github.com/khulnasoft/jupyterlab-khulnasoft
 test: false
 

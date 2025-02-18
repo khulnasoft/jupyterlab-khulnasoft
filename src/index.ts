@@ -5,10 +5,10 @@ import {
 import { IEditorLanguageRegistry } from '@jupyterlab/codemirror';
 import { ICompletionProviderManager } from '@jupyterlab/completer';
 import { ISettingRegistry } from '@jupyterlab/settingregistry';
-import { CodeiumProvider } from './provider';
+import { KhulnasoftProvider } from './provider';
 
 const plugin: JupyterFrontEndPlugin<void> = {
-  id: 'jupyterlab-codeium:inline-provider',
+  id: 'jupyterlab-khulnasoft:inline-provider',
   autoStart: true,
   requires: [
     ICompletionProviderManager,
@@ -21,7 +21,7 @@ const plugin: JupyterFrontEndPlugin<void> = {
     editorLanguageRegistry: IEditorLanguageRegistry,
     settingRegistry: ISettingRegistry
   ): void => {
-    const provider = new CodeiumProvider({ editorLanguageRegistry });
+    const provider = new KhulnasoftProvider({ editorLanguageRegistry });
     manager.registerInlineProvider(provider);
 
     settingRegistry

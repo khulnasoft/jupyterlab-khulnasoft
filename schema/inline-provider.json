@@ -1,12 +1,12 @@
 {
-  "title": "Codeium",
+  "title": "Khulnasoft",
   "description": "Codeuim settings",
   "type": "object",
   "properties": {
     "apiKey": {
       "type": "string",
-      "title": "The Codeium API key",
-      "description": "The API key to use for Codeium",
+      "title": "The Khulnasoft API key",
+      "description": "The API key to use for Khulnasoft",
       "default": ""
     }
   },

@@ -1,9 +1,9 @@
-// Some of this code is based on the code from https://github.com/val-town/codemirror-codeium/blob/main/src/config.ts
-// licensed under the ISC License: https://github.com/val-town/codemirror-codeium/blob/main/LICENSE
+// Some of this code is based on the code from https://github.com/val-town/codemirror-khulnasoft/blob/main/src/config.ts
+// licensed under the ISC License: https://github.com/val-town/codemirror-khulnasoft/blob/main/LICENSE
 
-export interface ICodeiumConfig {
+export interface IKhulnasoftConfig {
   /**
-   * Codeium API key
+   * Khulnasoft API key
    */
   apiKey: string;
 
@@ -13,7 +13,7 @@ export interface ICodeiumConfig {
   language?: string;
   /**
    * Time in millseconds after typing to fetch
-   * completions from codeium
+   * completions from khulnasoft
    */
   timeout?: number;
 

@@ -6,13 +6,13 @@ import {
 
 import { IEditorLanguageRegistry } from '@jupyterlab/codemirror';
 
-import { getCodeiumCompletions, simplifyCompletions } from './codeium';
+import { getKhulnasoftCompletions, simplifyCompletions } from './khulnasoft';
 
-export class CodeiumProvider implements IInlineCompletionProvider {
-  readonly identifier = 'codeium';
-  readonly name = 'Codeium';
+export class KhulnasoftProvider implements IInlineCompletionProvider {
+  readonly identifier = 'khulnasoft';
+  readonly name = 'Khulnasoft';
 
-  constructor(options: CodeiumProvider.IOptions) {
+  constructor(options: KhulnasoftProvider.IOptions) {
     this._editorLanguageRegistry = options.editorLanguageRegistry;
   }
 
@@ -26,7 +26,7 @@ export class CodeiumProvider implements IInlineCompletionProvider {
   ) {
     const { text, offset: cursorOffset, mimeType } = request;
     const language = this._editorLanguageRegistry.findByMIME(mimeType ?? '');
-    const results = await getCodeiumCompletions({
+    const results = await getKhulnasoftCompletions({
       text,
       cursorOffset,
       config: {
@@ -51,7 +51,7 @@ export class CodeiumProvider implements IInlineCompletionProvider {
   private _editorLanguageRegistry: IEditorLanguageRegistry;
 }
 
-export namespace CodeiumProvider {
+export namespace KhulnasoftProvider {
   export interface IOptions {
     editorLanguageRegistry: IEditorLanguageRegistry;
   }

@@ -21,50 +21,50 @@ import {
   ExperimentKey,
   Language,
   Metadata
-} from '../codeium_common_pb/codeium_common_pb';
+} from '../khulnasoft_common_pb/khulnasoft_common_pb';
 
 /**
- * @generated from enum exa.language_server_pb.CodeiumState
+ * @generated from enum exa.language_server_pb.KhulnasoftState
  */
-export enum CodeiumState {
+export enum KhulnasoftState {
   /**
-   * @generated from enum value: CODEIUM_STATE_UNSPECIFIED = 0;
+   * @generated from enum value: KHULNASOFT_STATE_UNSPECIFIED = 0;
    */
   UNSPECIFIED = 0,
 
   /**
-   * @generated from enum value: CODEIUM_STATE_INACTIVE = 1;
+   * @generated from enum value: KHULNASOFT_STATE_INACTIVE = 1;
    */
   INACTIVE = 1,
 
   /**
-   * @generated from enum value: CODEIUM_STATE_PROCESSING = 2;
+   * @generated from enum value: KHULNASOFT_STATE_PROCESSING = 2;
    */
   PROCESSING = 2,
 
   /**
-   * @generated from enum value: CODEIUM_STATE_SUCCESS = 3;
+   * @generated from enum value: KHULNASOFT_STATE_SUCCESS = 3;
    */
   SUCCESS = 3,
 
   /**
-   * @generated from enum value: CODEIUM_STATE_WARNING = 4;
+   * @generated from enum value: KHULNASOFT_STATE_WARNING = 4;
    */
   WARNING = 4,
 
   /**
-   * @generated from enum value: CODEIUM_STATE_ERROR = 5;
+   * @generated from enum value: KHULNASOFT_STATE_ERROR = 5;
    */
   ERROR = 5
 }
-// Retrieve enum metadata with: proto3.getEnumType(CodeiumState)
-proto3.util.setEnumType(CodeiumState, 'exa.language_server_pb.CodeiumState', [
-  { no: 0, name: 'CODEIUM_STATE_UNSPECIFIED' },
-  { no: 1, name: 'CODEIUM_STATE_INACTIVE' },
-  { no: 2, name: 'CODEIUM_STATE_PROCESSING' },
-  { no: 3, name: 'CODEIUM_STATE_SUCCESS' },
-  { no: 4, name: 'CODEIUM_STATE_WARNING' },
-  { no: 5, name: 'CODEIUM_STATE_ERROR' }
+// Retrieve enum metadata with: proto3.getEnumType(KhulnasoftState)
+proto3.util.setEnumType(KhulnasoftState, 'exa.language_server_pb.KhulnasoftState', [
+  { no: 0, name: 'KHULNASOFT_STATE_UNSPECIFIED' },
+  { no: 1, name: 'KHULNASOFT_STATE_INACTIVE' },
+  { no: 2, name: 'KHULNASOFT_STATE_PROCESSING' },
+  { no: 3, name: 'KHULNASOFT_STATE_SUCCESS' },
+  { no: 4, name: 'KHULNASOFT_STATE_WARNING' },
+  { no: 5, name: 'KHULNASOFT_STATE_ERROR' }
 ]);
 
 /**
@@ -194,7 +194,7 @@ export class MultilineConfig extends Message<MultilineConfig> {
  */
 export class GetCompletionsRequest extends Message<GetCompletionsRequest> {
   /**
-   * @generated from field: exa.codeium_common_pb.Metadata metadata = 1;
+   * @generated from field: exa.khulnasoft_common_pb.Metadata metadata = 1;
    */
   metadata?: Metadata;
 
@@ -204,7 +204,7 @@ export class GetCompletionsRequest extends Message<GetCompletionsRequest> {
   document?: Document;
 
   /**
-   * @generated from field: exa.codeium_common_pb.EditorOptions editor_options = 3;
+   * @generated from field: exa.khulnasoft_common_pb.EditorOptions editor_options = 3;
    */
   editorOptions?: EditorOptions;
 
@@ -358,7 +358,7 @@ export class GetCompletionsResponse extends Message<GetCompletionsResponse> {
  */
 export class AcceptCompletionRequest extends Message<AcceptCompletionRequest> {
   /**
-   * @generated from field: exa.codeium_common_pb.Metadata metadata = 1;
+   * @generated from field: exa.khulnasoft_common_pb.Metadata metadata = 1;
    */
   metadata?: Metadata;
 
@@ -662,7 +662,7 @@ export class Document extends Message<Document> {
   /**
    * Language enum standardized across editors.
    *
-   * @generated from field: exa.codeium_common_pb.Language language = 5;
+   * @generated from field: exa.khulnasoft_common_pb.Language language = 5;
    */
   language = Language.UNSPECIFIED;
 
@@ -759,7 +759,7 @@ export class Document extends Message<Document> {
  */
 export class ExperimentConfig extends Message<ExperimentConfig> {
   /**
-   * @generated from field: repeated exa.codeium_common_pb.ExperimentKey force_enable_experiments = 1;
+   * @generated from field: repeated exa.khulnasoft_common_pb.ExperimentKey force_enable_experiments = 1;
    */
   forceEnableExperiments: ExperimentKey[] = [];
 
@@ -816,9 +816,9 @@ export class ExperimentConfig extends Message<ExperimentConfig> {
  */
 export class State extends Message<State> {
   /**
-   * @generated from field: exa.language_server_pb.CodeiumState state = 1;
+   * @generated from field: exa.language_server_pb.KhulnasoftState state = 1;
    */
-  state = CodeiumState.UNSPECIFIED;
+  state = KhulnasoftState.UNSPECIFIED;
 
   /**
    * @generated from field: string message = 2;
@@ -833,7 +833,7 @@ export class State extends Message<State> {
   static readonly runtime: typeof proto3 = proto3;
   static readonly typeName = 'exa.language_server_pb.State';
   static readonly fields: FieldList = proto3.util.newFieldList(() => [
-    { no: 1, name: 'state', kind: 'enum', T: proto3.getEnumType(CodeiumState) },
+    { no: 1, name: 'state', kind: 'enum', T: proto3.getEnumType(KhulnasoftState) },
     { no: 2, name: 'message', kind: 'scalar', T: 9 /* ScalarType.STRING */ }
   ]);
 
@@ -1102,7 +1102,7 @@ export class CompletionPart extends Message<CompletionPart> {
  */
 export class CompletionItem extends Message<CompletionItem> {
   /**
-   * @generated from field: exa.codeium_common_pb.Completion completion = 1;
+   * @generated from field: exa.khulnasoft_common_pb.Completion completion = 1;
    */
   completion?: Completion;
 
@@ -1117,7 +1117,7 @@ export class CompletionItem extends Message<CompletionItem> {
   range?: Range;
 
   /**
-   * @generated from field: exa.codeium_common_pb.CompletionSource source = 3;
+   * @generated from field: exa.khulnasoft_common_pb.CompletionSource source = 3;
    */
   source = CompletionSource.UNSPECIFIED;
 

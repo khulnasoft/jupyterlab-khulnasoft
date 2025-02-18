@@ -1,21 +1,21 @@
-// Some of this code is based on the code from https://github.com/val-town/codemirror-codeium/blob/main/src/codeium.ts
-// licensed under the ISC License: https://github.com/val-town/codemirror-codeium/blob/main/LICENSE
+// Some of this code is based on the code from https://github.com/val-town/codemirror-khulnasoft/blob/main/src/khulnasoft.ts
+// licensed under the ISC License: https://github.com/val-town/codemirror-khulnasoft/blob/main/LICENSE
 
 import { UUID } from '@lumino/coreutils';
 
 import { createPromiseClient } from '@connectrpc/connect';
 import { LanguageServerService } from './api/proto/exa/language_server_pb/language_server_connect';
-import { Language } from './api/proto/exa/codeium_common_pb/codeium_common_pb';
+import { Language } from './api/proto/exa/khulnasoft_common_pb/khulnasoft_common_pb';
 import { createConnectTransport } from '@connectrpc/connect-web';
 import {
   Document,
   GetCompletionsResponse
 } from './api/proto/exa/language_server_pb/language_server_pb';
-import { ICodeiumConfig } from './config';
+import { IKhulnasoftConfig } from './config';
 import { type PartialMessage } from '@bufbuild/protobuf';
 
 const transport = createConnectTransport({
-  baseUrl: 'https://server.codeium.com',
+  baseUrl: 'https://server.khulnasoft.com',
   useBinaryFormat: true
 });
 
@@ -23,7 +23,7 @@ const client = createPromiseClient(LanguageServerService, transport);
 
 const sessionId = UUID.uuid4();
 
-export async function getCodeiumCompletions({
+export async function getKhulnasoftCompletions({
   text,
   cursorOffset,
   config,
@@ -31,7 +31,7 @@ export async function getCodeiumCompletions({
 }: {
   text: string;
   cursorOffset: number;
-  config: ICodeiumConfig;
+  config: IKhulnasoftConfig;
   otherDocuments: PartialMessage<Document>[];
 }) {
   const lang = config.language;

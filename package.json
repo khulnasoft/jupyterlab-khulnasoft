@@ -1,18 +1,18 @@
 {
-    "name": "jupyterlab-codeium",
+    "name": "jupyterlab-khulnasoft",
     "version": "0.1.1",
-    "description": "A JupyterLab extension to get AI code completions with Codeium",
+    "description": "A JupyterLab extension to get AI code completions with Khulnasoft",
     "keywords": [
         "jupyter",
         "jupyterlab",
         "jupyterlab-extension"
     ],
-    "homepage": "https://github.com/jtpio/jupyterlab-codeium",
+    "homepage": "https://github.com/khulnasoft/jupyterlab-khulnasoft",
     "bugs": {
-        "url": "https://github.com/jtpio/jupyterlab-codeium/issues"
+        "url": "https://github.com/khulnasoft/jupyterlab-khulnasoft/issues"
     },
     "license": "BSD-3-Clause",
-    "author": "Jeremy Tuloup",
+    "author": "Md Sulaiman",
     "files": [
         "lib/**/*.{d.ts,eot,gif,html,jpg,js,js.map,json,png,svg,woff2,ttf}",
         "style/**/*.{css,js,eot,gif,html,jpg,json,png,svg,woff2,ttf}",
@@ -24,7 +24,7 @@
     "style": "style/index.css",
     "repository": {
         "type": "git",
-        "url": "https://github.com/jtpio/jupyterlab-codeium.git"
+        "url": "https://github.com/khulnasoft/jupyterlab-khulnasoft.git"
     },
     "scripts": {
         "build": "jlpm build:lib && jlpm build:labextension:dev",
@@ -36,7 +36,7 @@
         "clean": "jlpm clean:lib",
         "clean:lib": "rimraf lib tsconfig.tsbuildinfo",
         "clean:lintcache": "rimraf .eslintcache .stylelintcache",
-        "clean:labextension": "rimraf jupyterlab_codeium/labextension jupyterlab_codeium/_version.py",
+        "clean:labextension": "rimraf jupyterlab_khulnasoft/labextension jupyterlab_khulnasoft/_version.py",
         "clean:all": "jlpm clean:lib && jlpm clean:labextension && jlpm clean:lintcache",
         "eslint": "jlpm eslint:check --fix",
         "eslint:check": "eslint . --cache --ext .ts,.tsx",
@@ -59,7 +59,8 @@
         "@jupyterlab/codemirror": "^4.0.0",
         "@jupyterlab/completer": "^4.0.0",
         "@jupyterlab/settingregistry": "^4.0.0",
-        "@lumino/coreutils": "^2.1.2"
+        "@lumino/coreutils": "^2.1.2",
+        "synopkg": "^13.0.3"
     },
     "devDependencies": {
         "@bufbuild/buf": "^1.30.0",
@@ -97,7 +98,7 @@
     },
     "jupyterlab": {
         "extension": true,
-        "outputDir": "jupyterlab_codeium/labextension",
+        "outputDir": "jupyterlab_khulnasoft/labextension",
         "schemaDir": "schema"
     },
     "eslintIgnore": [
